@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://iuba1ce66wyo"]
+
+[ext_resource type="Script" path="res://00_Main_Menu/MainMenu/ProfileCard/profile_card.gd" id="1_10ic0"]
+[ext_resource type="Texture2D" uid="uid://da2qr0ucsbc3s" path="res://Player/Sprites/PlayerSprite02.png" id="1_586jc"]
+[ext_resource type="Script" path="res://GeneralNodes/HitBox/hit_box.gd" id="2_goh3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipi1h"]
+size = Vector2(89.5, 89.5)
+
+[node name="Profile" type="TextureButton"]
+custom_minimum_size = Vector2(100, 32)
+layout_direction = 1
+size_flags_horizontal = 0
+mouse_filter = 1
+script = ExtResource("1_10ic0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="HitBox" type="Area2D" parent="MarginContainer"]
+position = Vector2(11, 7.5)
+collision_layer = 260
+collision_mask = 260
+script = ExtResource("2_goh3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/HitBox"]
+position = Vector2(50.25, 46.25)
+shape = SubResource("RectangleShape2D_ipi1h")
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "New Profile"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(44.8694, 58.467)
+texture = ExtResource("1_586jc")
+hframes = 16
+vframes = 3

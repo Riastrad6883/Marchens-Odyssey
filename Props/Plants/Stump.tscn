@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://deywmbllum5ua"]
+
+[ext_resource type="Script" path="res://Props/Plants/plant.gd" id="1_latif"]
+[ext_resource type="Texture2D" uid="uid://but86b4afyalj" path="res://Assets/EPIC RPG World Pack - Grass Land 2.0 v1.6.2/EPIC RPG World Pack - Grass Land 2.0 v1.6.2/Props/Static props/props from spritesheet1 by individual sprites/trunk 1.png" id="2_80yrr"]
+[ext_resource type="PackedScene" uid="uid://dl1nnyerd6tx6" path="res://GeneralNodes/HitBox/hit_box.tscn" id="3_6rl40"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnjf8"]
+size = Vector2(23, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdwst"]
+size = Vector2(23, 13)
+
+[node name="Stump" type="Node2D"]
+script = ExtResource("1_latif")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+texture = ExtResource("2_80yrr")
+
+[node name="HitBox" parent="." instance=ExtResource("3_6rl40")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-1.5, -5)
+shape = SubResource("RectangleShape2D_bnjf8")
+debug_color = Color(0.924827, 0.25207, 0.280004, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, -6)
+shape = SubResource("RectangleShape2D_sdwst")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://co1baqcnicfeo"]
+
+[ext_resource type="Script" path="res://root.gd" id="1_mgcjc"]
+
+[node name="Root" type="Node"]
+script = ExtResource("1_mgcjc")
+
+[node name="UserInterface" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

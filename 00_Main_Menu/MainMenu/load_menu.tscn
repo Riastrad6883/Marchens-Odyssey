@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://durphah2qraj2"]
+
+[ext_resource type="Script" path="res://00_Main_Menu/MainMenu/load_menu.gd" id="1_8dtfi"]
+[ext_resource type="Texture2D" uid="uid://dd61bu82bdd5w" path="res://Assets/Complete_UI_Essential_Pack_v2.3/02_Paper_Theme/Sprites/UI_Paper_Frame_02_Standard.png" id="1_nwdq4"]
+[ext_resource type="PackedScene" uid="uid://iuba1ce66wyo" path="res://00_Main_Menu/MainMenu/ProfileCard/profile_card.tscn" id="2_8n5li"]
+
+[node name="Load Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8dtfi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00209, 1.0046)
+texture = ExtResource("1_nwdq4")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.99583
+offset_top = 0.995418
+offset_right = 1.99582
+offset_bottom = 0.995422
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.990137, 0.980209)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Game Title"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Profile" parent="TextureRect/MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer" instance=ExtResource("2_8n5li")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 8
+text = "New Character"
+
+[node name="Button2" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 8
+text = "Back to Menu"

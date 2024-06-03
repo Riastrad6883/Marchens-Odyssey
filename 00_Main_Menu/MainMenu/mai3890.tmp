@@ -1,0 +1,163 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv1o84cst07os"]
+
+[ext_resource type="Script" path="res://00_Main_Menu/MainMenu/main_menu.gd" id="1_d871e"]
+[ext_resource type="Texture2D" uid="uid://dd61bu82bdd5w" path="res://Assets/Complete_UI_Essential_Pack_v2.3/02_Paper_Theme/Sprites/UI_Paper_Frame_02_Standard.png" id="2_dh5dg"]
+[ext_resource type="Script" path="res://00_Main_Menu/MainMenu/button.gd" id="3_plmrw"]
+[ext_resource type="Script" path="res://GeneralNodes/HitBox/hit_box.gd" id="4_wby12"]
+[ext_resource type="PackedScene" uid="uid://pfqs3ybhh6u7" path="res://Levels/player_spawn.tscn" id="5_lvqvr"]
+
+[sub_resource type="SystemFont" id="SystemFont_1ki6q"]
+font_names = PackedStringArray("High Tower Text")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l25w8"]
+size = Vector2(94.4466, 30.8947)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdsfk"]
+size = Vector2(41.6152, 30.8947)
+
+[node name="Main Menu" type="Control"]
+top_level = true
+clip_children = 2
+z_index = -1
+texture_filter = 2
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.00319, 1.00341)
+script = ExtResource("1_d871e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 478.0
+offset_bottom = 269.0
+texture = ExtResource("2_dh5dg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 478.0
+offset_bottom = 268.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_1ki6q")
+theme_override_font_sizes/font_size = 32
+text = "Game Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+script = ExtResource("3_plmrw")
+
+[node name="HitBox" type="Area2D" parent="MarginContainer/HBoxContainer/VBoxContainer/PlayButton"]
+position = Vector2(48.2368, 16.7383)
+collision_layer = 260
+collision_mask = 260
+script = ExtResource("4_wby12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/HBoxContainer/VBoxContainer/PlayButton/HitBox"]
+position = Vector2(-0.498276, -1.4949)
+shape = SubResource("RectangleShape2D_l25w8")
+
+[node name="NewButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "New Game"
+script = ExtResource("3_plmrw")
+
+[node name="HitBox" type="Area2D" parent="MarginContainer/HBoxContainer/VBoxContainer/NewButton"]
+position = Vector2(48.2368, 16.7383)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("4_wby12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/HBoxContainer/VBoxContainer/NewButton/HitBox"]
+position = Vector2(-0.498276, -1.4949)
+shape = SubResource("RectangleShape2D_l25w8")
+
+[node name="LoadButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load Game"
+script = ExtResource("3_plmrw")
+
+[node name="HitBox" type="Area2D" parent="MarginContainer/HBoxContainer/VBoxContainer/LoadButton"]
+position = Vector2(48.2368, 16.7383)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("4_wby12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/HBoxContainer/VBoxContainer/LoadButton/HitBox"]
+position = Vector2(-0.498276, -1.4949)
+shape = SubResource("RectangleShape2D_l25w8")
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+script = ExtResource("3_plmrw")
+
+[node name="HitBox" type="Area2D" parent="MarginContainer/HBoxContainer/VBoxContainer/SettingsButton"]
+position = Vector2(48.2368, 16.7383)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("4_wby12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/HBoxContainer/VBoxContainer/SettingsButton/HitBox"]
+position = Vector2(-0.498276, -1.4949)
+shape = SubResource("RectangleShape2D_l25w8")
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Quit"
+script = ExtResource("3_plmrw")
+
+[node name="HitBox" type="Area2D" parent="MarginContainer/HBoxContainer/VBoxContainer3/QuitButton"]
+position = Vector2(48.2368, 16.7383)
+collision_layer = 260
+collision_mask = 260
+script = ExtResource("4_wby12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/HBoxContainer/VBoxContainer3/QuitButton/HitBox"]
+position = Vector2(-27.0396, -1.4949)
+shape = SubResource("RectangleShape2D_sdsfk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240.234, 135.538)
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("5_lvqvr")]
+position = Vector2(121.612, 109.626)

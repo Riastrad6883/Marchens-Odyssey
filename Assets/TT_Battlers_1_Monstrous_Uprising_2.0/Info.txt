@@ -1,0 +1,22 @@
+--------------------
+Package Information
+
+Battlers folders (Original & 2X/3X) contains 18 unique sprites (and its respective recolors, 86 sprites in total), split by the following categories:
+- Orc 1 (Shield Fighter)
+- Orc 2 (Rogue)
+- Orc 3 (Axe and Dagger)
+- Orc 4 (Bow)
+- Orc 5 (Shaman)
+- Orc 6 (Greatsword)
+- Orc 7 (Warhammer)
+- Orc 8 (Greataxe)
+- Naga 1 (Spear)
+- Naga 2 (Trident)
+- Naga 3 (Dual Scimitar)
+- Naga 4 (Bow)
+- Naga 5 (Halberd)
+- Naga 6 (Priest)
+- Naga HP (High Priest)
+- Kobold 1 (Warrior)
+- Kobold 2 (Lancer)
+- Kobold 3 (Wizard)

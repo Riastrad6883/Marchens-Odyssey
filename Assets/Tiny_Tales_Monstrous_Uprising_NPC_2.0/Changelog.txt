@@ -1,0 +1,7 @@
+
+--------------------
+Changelog
+
+01/13/2022 v.1.0 - Initial Version Uploaded
+
+05/19/2022 v.2.0 - Major Fixes and Updates, Color Swaps Added

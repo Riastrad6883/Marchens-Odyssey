@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=7 format=3 uid="uid://crracbarkuvw6"]
+
+[ext_resource type="Script" path="res://Items/Item_Effect/item_effect_heal.gd" id="1_6uhpm"]
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_ecnw4"]
+[ext_resource type="Texture2D" uid="uid://bucr4gjymi5p1" path="res://Items/Sprites/items.png" id="2_dv1ka"]
+[ext_resource type="AudioStream" uid="uid://dmrpimod4iyui" path="res://Items/Item_Effect/hp-up.wav" id="2_rcmug"]
+
+[sub_resource type="Resource" id="Resource_pyyon"]
+script = ExtResource("1_6uhpm")
+heal_amount = 2
+audio = ExtResource("2_rcmug")
+use_description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7dcf"]
+atlas = ExtResource("2_dv1ka")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_ecnw4")
+name = "Potion"
+description = "Restores Health, Tastes Horrible... Nothing in life is free..."
+texture = SubResource("AtlasTexture_k7dcf")
+effects = Array[Resource("res://Items/Item_Effect/item_effect.gd")]([SubResource("Resource_pyyon")])
