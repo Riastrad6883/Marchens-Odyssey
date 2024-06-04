@@ -22,7 +22,7 @@ var max_hp : int = 6
 
 
 #Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	PlayerManager.player = self
 	state_machine.Initilaise(self)
 	hit_box.Damaged.connect(_take_damage)
@@ -31,7 +31,7 @@ func _ready():
 
 
 #Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(_delta:float) -> void:
 	#direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	#direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	direction = Vector2(
@@ -41,7 +41,7 @@ func _process(_delta):
 	pass
 
 
-func _physics_process(_delta):
+func _physics_process(_delta : float) -> void:
 	move_and_slide()
 	
 
@@ -50,7 +50,7 @@ func SetDirection() -> bool:
 		return false
 	
 	var direction_id : int = int( round( ( direction + cardinal_direction * 0.1 ).angle() / TAU * DIR_4.size() ) )
-	var new_dir = DIR_4[ direction_id ]
+	var new_dir : Vector2 = DIR_4[ direction_id ]
 	
 	if new_dir == cardinal_direction:
 		return false

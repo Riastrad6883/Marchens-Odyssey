@@ -17,7 +17,7 @@ func _ready() -> void:
 	pass
 
 func on_inventory_changed() -> void:
-	var i = focus_index
+	var i : int = focus_index
 	clear_invenotry()
 	update_inventory(i)
 	
@@ -29,7 +29,7 @@ func clear_invenotry() -> void:
 
 func update_inventory(i : int = 0) -> void:
 	for s in data.slots:
-		var new_slot = INVENTORY_SLOT.instantiate()
+		var new_slot : Node = INVENTORY_SLOT.instantiate()
 		add_child(new_slot)
 		new_slot.slot_data = s
 		new_slot.focus_entered.connect(item_focused)

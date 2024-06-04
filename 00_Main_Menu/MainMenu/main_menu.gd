@@ -20,11 +20,11 @@ func _ready() -> void:
 	#PlayerHud.player_hud.PROCESS_MODE_DISABLED
 	pass
 
-func _on_quit_pressed(hurt_box : HurtBox) -> void:
+func _on_quit_pressed(_hurt_box : HurtBox) -> void:
 	await get_tree().create_timer(0.8).timeout
 	get_tree().quit()
 
-func _on_load_pressed(hurt_box : HurtBox) -> void:
+func _on_load_pressed(_hurt_box : HurtBox) -> void:
 	print("load pressed")
 	await get_tree().create_timer(0.8).timeout
 	
@@ -32,15 +32,15 @@ func _on_load_pressed(hurt_box : HurtBox) -> void:
 	pass
 
 
-func _on_settings_pressed(hurt_box : HurtBox) -> void:
+func _on_settings_pressed(_hurt_box : HurtBox) -> void:
 	await get_tree().create_timer(0.8).timeout
 	pass
 
-func _on_new_pressed(hurt_box : HurtBox) -> void:
+func _on_new_pressed(_hurt_box : HurtBox) -> void:
 	await get_tree().create_timer(0.8).timeout
 	pass
 
-func _on_play_pressed(hurtbox : HurtBox) -> void:
+func _on_play_pressed(_hurtbox : HurtBox) -> void:
 	await get_tree().create_timer(0.8).timeout
 	SaveManager.load_game()
 	pass

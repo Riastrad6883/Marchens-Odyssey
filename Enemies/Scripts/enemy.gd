@@ -28,11 +28,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(_delta : float) -> void:
 	pass
 	
 
-func _physics_process(_delta):
+func _physics_process(_delta : float) -> void:
 	move_and_slide()
 
 
@@ -42,7 +42,7 @@ func SetDirection( _new_direction : Vector2 ) -> bool:
 		return false
 	
 	var direction_id : int = int( round( ( direction + cardinal_direction * 0.1 ).angle() / TAU * DIR_4.size() ) )
-	var new_dir = DIR_4[ direction_id ]
+	var new_dir : Vector2 = DIR_4[ direction_id ]
 	
 	if new_dir == cardinal_direction:
 		return false

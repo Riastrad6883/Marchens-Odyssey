@@ -5,7 +5,7 @@ var hearts : Array[HeartGUI] = []
 
 @onready var player_hud : CanvasLayer = $"."
 
-func _ready():
+func _ready() -> void:
 	get_viewport().set_input_as_handled()
 	for c in $Control/HFlowContainer.get_children():
 		if c is HeartGUI:

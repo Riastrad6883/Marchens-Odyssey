@@ -6,16 +6,16 @@ signal hidden
 
 @onready var button_save : Button = $Control/VBoxContainer/Button_Save
 @onready var button_load : Button = $Control/VBoxContainer/Button_Load
-@onready var button_exit = $Control/VBoxContainer/Button_Exit
+@onready var button_exit : Button = $Control/VBoxContainer/Button_Exit
 @onready var audio_stream_player : AudioStreamPlayer = $Control/AudioStreamPlayer
 
-@onready var item_description = $Control/ItemDescription
+@onready var item_description : Label = $Control/ItemDescription
 
 var is_paused : bool = false
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	hide_pause_menu()
 	button_save.pressed.connect(_on_save_pressed)
 	button_load.pressed.connect(_on_load_pressed)
@@ -72,7 +72,7 @@ func update_item_description(new_text:String) -> void:
 	item_description.text = new_text
 
 
-func _on_button_exit_pressed():
+func _on_button_exit_pressed() -> void:
 	_on_exit_pressed()
 
 func play_sound(sound : AudioStream) -> void:

@@ -15,7 +15,7 @@ func add_item(item :ItemData, count : int = 1) -> bool:
 	
 	for i in slots.size():
 		if slots[i] == null:
-			var new = SlotData.new()
+			var new : SlotData = SlotData.new()
 			new.item_data = item
 			new.quantity = count
 			slots[i] = new
@@ -36,7 +36,7 @@ func slot_changed()->void:
 		if s:
 			if s.quantity < 1:
 				s.changed.disconnect(slot_changed)
-				var index = slots.find(s)
+				var index : int = slots.find(s)
 				slots[index] = null
 				emit_changed()
 	pass
@@ -51,7 +51,7 @@ func get_save_data() -> Array:
 
 ##Convert each inventory item into a dictionary
 func item_to_save(slot : SlotData) -> Dictionary:
-	var result = { item = "", quantity = 0 }
+	var result : Dictionary = { item = "", quantity = 0 }
 	if slot != null:
 		result.quantity = slot.quantity
 		if slot.item_data!= null:
@@ -60,7 +60,7 @@ func item_to_save(slot : SlotData) -> Dictionary:
 
 
 func parse_save_date(save_data : Array) -> void:
-	var array_size = slots.size()
+	var array_size : int = slots.size()
 	slots.clear()
 	slots.resize(array_size)
 	for i in save_data.size():

@@ -26,7 +26,7 @@ func save_game() -> void:
 	update_scene_path()
 	update_item_data()
 	var file := FileAccess.open(SAVE_PATH + "save.sav", FileAccess.WRITE)
-	var save_json = JSON.stringify(current_save)
+	var save_json : String = JSON.stringify(current_save)
 	file.store_line(save_json)
 	game_saved.emit()
 	pass
@@ -76,5 +76,5 @@ func add_persistent_value(value : String)-> void:
 	pass
 
 func check_persistent_value(value : String) -> bool:
-	var p = current_save.persistence as Array
+	var p : Array = current_save.persistence as Array
 	return p.has(value)

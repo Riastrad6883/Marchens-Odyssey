@@ -36,7 +36,7 @@ func item_unfocused() -> void:
 func item_pressed() -> void:
 	if slot_data:
 		if slot_data.item_data:
-			var was_used = slot_data.item_data.use()
+			var was_used : bool = slot_data.item_data.use()
 			if was_used == false:
 				return
 			slot_data.quantity -=1
